@@ -1,0 +1,19 @@
+.menu-items{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    justify-content: flex-end;
+    cursor: pointer;
+    align-items: center;
+    margin-right: 10px;
+
+}
+.logo{
+    color: blueviolet;
+}
+.nav-container{
+    margin: auto;
+    display: flex;
+    position: sticky;
+}
