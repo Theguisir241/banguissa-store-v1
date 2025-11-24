@@ -1,16 +1,18 @@
-import styles from "./page.module.css";
 import Navbar from "./components/navbar";
 import Hero from "./components/Hero";
-
+import About from "./components/About";
+import Services from "./components/Services";
+import Gallery from "./components/Galerry";
+import GetAQuote from "./components/GetAQuote";
 export default function Home() {
   return (
     <div>
     <Navbar/>
     <Hero/>
-    <div className={styles.container}>
-      <h1 className={styles.title}>Bienvenue sur Banguissa Store</h1>
-      <p className={styles.subtitle}>Sourcing | Quality Control</p>
-    </div>
+    <About/>
+    <Services/>
+    <Gallery/>
+    <GetAQuote/>
      </div>
   );
 }

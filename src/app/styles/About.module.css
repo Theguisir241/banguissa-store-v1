@@ -1,0 +1,110 @@
+/* styles/About.module.css */
+
+/* --- 1. Conteneur Principal (Grid / Flex) --- */
+
+.aboutSection {
+  /* Utilisation de Grid pour le layout principal à deux colonnes */
+  display: grid;
+  /* 1fr pour les images (gauche) et 1.5fr pour le texte (droite), pour donner plus d'espace au texte */
+  grid-template-columns: 1fr 1.5fr; 
+  gap: 80px; /* Espace entre les deux colonnes */
+  padding: 80px 3%; /* Marge intérieure de la section */
+  align-items: center; /* Aligner les colonnes verticalement au centre */
+  overflow: hidden; /* Important pour contenir les éléments */
+}
+
+/* Responsivité : Passage à une seule colonne pour les petits écrans (mobile) */
+@media (max-width: 992px) {
+  .aboutSection {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 40px;
+  }
+}
+
+/* --- 2. Colonne Gauche (Images) --- */
+
+.imageCol {
+  /* Conteneur Flex pour aligner potentiellement des éléments, ici principalement pour centrer */
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  /* Le parent qui permet le positionnement absolu des images superposées */
+  position: relative;
+  /* Définir une largeur pour que les images ne s'étirent pas à l'infini sur les grands écrans */
+  max-width: 550px; 
+}
+
+/* Conteneurs des images pour gérer la mise en forme et les coins arrondis */
+.mainImageWrapper,
+.subImageWrapper {
+  overflow: hidden; /* Cache tout ce qui dépasse pour appliquer le border-radius */
+  border-radius: 15px; /* Coins arrondis, comme dans l'exemple */
+}
+
+/* L'image principale (grand rectangle) */
+.mainImageWrapper {
+  z-index: 2; /* S'assure qu'elle est en dessous de la subImage */
+}
+
+/* L'image secondaire (petit carré superposé) */
+.subImageWrapper {
+  border: 5px solid white;
+  position: absolute; /* Permet la superposition */
+  z-index: 3; /* Se place au-dessus de la mainImage */
+  /* Positionnement pour la superposition (ajustez ces valeurs) */
+  bottom: -70px; /* Remonte de 40px par rapport au bas du conteneur parent */
+  left: -30px; /* Déborde de 80px sur la gauche */
+  width: 40%; /* Gère la taille de l'image superposée par rapport à l'image principale */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
+}
+
+/* --- 3. Colonne Droite (Contenu Textuel) --- */
+
+.contentCol {
+  /* Flex en colonne pour empiler les éléments facilement */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espace entre les titres et les points clés */
+}
+
+.subtitle {
+  color: #f4ca54; /* Couleur de marque pour le petit titre */
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Styles pour chaque point clé (Sourcing, Logistics) */
+.keyPoint {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.keyTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #0070f3; 
+}
+.keyDescription{
+  margin-bottom: 15px;
+}

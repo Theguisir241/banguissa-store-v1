@@ -1,0 +1,64 @@
+.section {
+  padding: 5rem 1.5rem;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.653), rgba(0, 0, 0, 0.758)), url(/shipment-manager-asking-warehouse-workers-about-merchandise-storage-system-african-american-storehouse-employees-talking-using-inventory-software-laptop-reception-counter.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff; /* couleur par défaut : blanc */
+}
+
+.highlight {
+  color: #FFD700; /* jaune */
+}
+
+
+.subtitle {
+  color: #ffffff;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
