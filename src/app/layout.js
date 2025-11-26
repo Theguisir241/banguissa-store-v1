@@ -1,5 +1,7 @@
 import { Lato } from "next/font/google";
+import Navbar from "./components/navbar";
 import "./globals.css";
+import Footer from "./components/Footer";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -16,7 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={lato.variable}>
-        {children}
+         <Navbar/>
+           {children}
+         <Footer/>
+           
+        
       </body>
     </html>
   );

@@ -3,23 +3,32 @@
 /* --- 1. Conteneur Principal (Grid / Flex) --- */
 
 .aboutSection {
-  /* Utilisation de Grid pour le layout principal à deux colonnes */
   display: grid;
-  /* 1fr pour les images (gauche) et 1.5fr pour le texte (droite), pour donner plus d'espace au texte */
-  grid-template-columns: 1fr 1.5fr; 
-  gap: 80px; /* Espace entre les deux colonnes */
-  padding: 80px 3%; /* Marge intérieure de la section */
-  align-items: center; /* Aligner les colonnes verticalement au centre */
-  overflow: hidden; /* Important pour contenir les éléments */
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  padding: 80px 3%;
+  align-items: center;
+  overflow: hidden;
 }
 
-/* Responsivité : Passage à une seule colonne pour les petits écrans (mobile) */
-@media (max-width: 992px) {
+/* Tablette (1024px) : 2 colonnes mais en flex propre */
+@media (max-width: 1024px) {
   .aboutSection {
-    grid-template-columns: 1fr; /* Une seule colonne */
+    display: flex;
+    flex-direction: row;
     gap: 40px;
   }
 }
+
+/* Mobile (768px) : 1 colonne */
+@media (max-width: 768px) {
+  .aboutSection {
+    flex-direction: column;
+    padding: 0px 3%;
+    text-align: center;
+  }
+}
+
 
 /* --- 2. Colonne Gauche (Images) --- */
 
@@ -106,5 +115,64 @@
     color: #0070f3; 
 }
 .keyDescription{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+/* ---- ANIMATIONS SECTION ---- */
+
+.animations {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 50px 3%;
+  border-radius: 15px;
+  background: #fffdf5;
+}
+
+/* Colonne texte à gauche */
+.animText {
+  flex: 1;
+  text-align: left;
+}
+
+.animText h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f4ca54;
+  margin-bottom: 20px;
+}
+
+.animText p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Colonne animation à droite */
+.animVisual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.myanimation {
+  width: 90%;
+  max-width: 600px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 992px) {
+  .animations {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .animText {
+    text-align: center;
+  }
+
+  .myanimation {
+    width: 80%;
+  }
 }

@@ -27,7 +27,8 @@ export default function Services() {
   ];
 
   return (
-    <section className={styles.section}>
+    <>
+    <section className={styles.section} id="services">
       <ScrollAnimation animation="fade" duration={1}>
   <h2 className={styles.title}>
     <span>Nos </span>
@@ -55,5 +56,11 @@ export default function Services() {
         ))}
       </div>
     </section>
+     <dotlottie-wc
+  src="https://lottie.host/af3c1db1-45f3-482b-8bfe-c6a442d50bd7/5LgPN7Uuig.lottie"
+  autoplay
+  loop
+></dotlottie-wc>
+</>
   );
 }

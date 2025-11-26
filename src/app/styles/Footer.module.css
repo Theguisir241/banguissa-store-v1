@@ -1,0 +1,106 @@
+.footer {
+  width: 100%;
+  background: #0d0d0d;
+  color: white;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ----------------- TOP CONTACTS ----------------- */
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.contactItem:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* ----------------- LINKS SECTION ----------------- */
+.links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.links h1 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 8px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #d1d1d1;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.links a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+/* ----------------- SOCIAL ICONS ----------------- */
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social a {
+  color: white;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.social a:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ----------------- BOTTOM ----------------- */
+.bottom {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 900px) {
+  .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .links {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

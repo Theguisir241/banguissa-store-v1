@@ -1,7 +1,6 @@
+'use client'
 import styles from "../styles/Hero.module.css"
 import { BadgeCheck, Warehouse, Plane, Ship } from "lucide-react";
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className={styles["hero-container"]}>
@@ -12,7 +11,7 @@ export default function Hero() {
 
         <div className={styles["hero-links"]}>
           <a href="" className={styles["hero-link-1"]}>Découvrir nos services ➜</a>
-          <a href="">Obtenir un devis ➜</a>
+          <a href="#">Obtenir un devis ➜</a>
         </div>
         <div className={styles["illustrations-container"]}>
           <div className={styles["icons-area-1"]}>
@@ -48,6 +47,10 @@ export default function Hero() {
 
         </div>
         </div>
+
+    
+ 
+
     </section>
   );
 }

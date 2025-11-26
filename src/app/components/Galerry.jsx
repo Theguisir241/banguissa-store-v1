@@ -24,7 +24,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section className={styles.gallerySection}>
+    <section className={styles.gallerySection} id="gallery">
 
       {/* Titre */}
       <ScrollAnimation animation="slideUp">
@@ -34,7 +34,6 @@ export default function Gallery() {
       </ScrollAnimation>
 
       {/* MASONRY GRID */}
-      <ScrollAnimation animation="fade" duration={1}>
         <div className={styles.masonry}>
           {images.map((src, i) => (
             <div key={i} className={styles.masonryItem}>
@@ -49,7 +48,6 @@ export default function Gallery() {
             </div>
           ))}
         </div>
-      </ScrollAnimation>
 
       {/* CTA */}
       <ScrollAnimation animation="zoomIn" duration={0.8} delay={0.2}>

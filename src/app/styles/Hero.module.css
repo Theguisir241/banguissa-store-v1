@@ -1,13 +1,50 @@
 .hero-container{
    background:linear-gradient(rgba(0, 0, 0, 0.612), rgb(0, 0, 0)),
    url("/black-female-courier-working-checking-packages-delivery-van.jpg");
-    width: 100%;
     background-size: cover;
-    height: 100%;
     display: flex;
     align-items: center;
 
 }
+@media screen and (max-width: 600px) {
+  /* 1. Réduire les marges du texte */
+  .hero-content {
+    margin-top: 10px;
+    margin: 10 !important;
+    margin-bottom: 20px !important;
+  }
+
+.hero-container{
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+  /* 2. Réduire gap des liens */
+  .hero-links {
+    gap: 20px !important;
+    padding: 2px;
+  }
+
+  /* 3. Illustrations moins hautes */
+  .illustrations-container {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+
+  }
+  .hero-links a{
+    height: 50;
+    gap: 2px;
+    text-align: center;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+
+}
+}
+
 
 .hero-content{
     color: white;
@@ -17,7 +54,7 @@
 }
 .hero-content h1{
   color: #f4ca54;
-  margin-top: 8rem;
+  margin-top: 2rem;
    
 }
 .hero-content h2 {
@@ -26,7 +63,7 @@
 .hero-links{
     display: flex;
     margin-top: 30px;
-    gap: 50px;
+    gap: 40px;
 }
 .hero-links a:hover{
   transform: translate(2,2);
@@ -50,7 +87,6 @@
 }
 .illustrations-container{
   width: 100%;
-  height: 300px;
   display: flex;
   gap: 20px;
   align-items: flex-end;

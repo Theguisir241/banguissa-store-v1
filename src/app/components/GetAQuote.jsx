@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styles from "../styles/GetAQuote.module.css";
 import Button from "./Button";
+import ScrollAnimation from "./ScrollAnimation";
 
 export default function GetAQuote() {
   const [formData, setFormData] = useState({
@@ -36,10 +37,13 @@ export default function GetAQuote() {
   };
 
   return (
-    <section className={styles.quoteSection}>
+    <section className={styles.quoteSection} id="quote">
       <div className={styles.container}>
         {/* Titre */}
+        <ScrollAnimation animation="slideDown" delay={0.2} duration={1}>
         <h2 className={styles.title}>Obtenez un devis pour vos achats en Chine</h2>
+        </ScrollAnimation>
+        
 
         {/* Explication */}
         <p className={styles.description}>

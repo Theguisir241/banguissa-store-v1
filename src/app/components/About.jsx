@@ -5,7 +5,8 @@ import Button from "./Button.jsx";
 import { BadgeCheck, Plane } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 import Image from "next/image"
-import { use } from "react";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 // components/About.js
 
 
@@ -23,91 +24,151 @@ const About = () => {
   const hauteurSub = 300; 
 
   return (
-    <section className={styles.aboutSection}>
+    <>
+    <section className={styles.aboutSection} id="about">
       
-      {/* Colonne Gauche: Images avec Superposition */}
-      <div className={styles.imageCol}>
-        <div className={styles.imageContainer}>
-          
-          {/* Image Principale (Grand rectangle) */}
-          <div className={styles.mainImageWrapper}>
-            <Image
-              src={imagePrincipale}
-              alt="Deux partenaires de Banguissa Store se serrant la main après inspection."
-              width={largeurMain}
-              height={hauteurMain}
-              // 'layout="responsive"' est l'approche moderne pour gérer les images fluides
-              sizes="(max-width: 768px) 100vw, 50vw" 
-              className={styles.mainImage}
-            />
-          </div>
-
-          {/* Image Secondaire (Petit carré superposé) */}
-          <div className={styles.subImageWrapper}>
-            <Image
-              src={imageSecondaire}
-              alt="Vue aérienne d'un employé vérifiant un chargement de marchandise."
-              width={largeurSub}
-              height={hauteurSub}
-              // 'layout="responsive"' ou 'layout="fixed"' dépend du style exact, 
-              // 'responsive' est souvent meilleur.
-              sizes="(max-width: 768px) 50vw, 25vw"
-              className={styles.subImage}
-            />
-          </div>
-          
+  {/* Colonne Gauche : Images */}
+  <div className={styles.imageCol}>
+    <div className={styles.imageContainer}>
+      
+      {/* Image Principale */}
+      <ScrollAnimation animation="fade" duration={1}>
+        <div className={styles.mainImageWrapper}>
+          <Image
+            src={imagePrincipale}
+            alt="Deux partenaires de Banguissa Store se serrant la main après inspection."
+            width={largeurMain}
+            height={hauteurMain}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className={styles.mainImage}
+          />
         </div>
-      </div>
-
-      {/* Colonne Droite: Contenu Textuel */}
-      <div className={styles.contentCol}>
-        
-        {/* Titre Secondaire (h6) */}
-        <h6 className={styles.subtitle}>À PROPOS DE NOUS</h6>
-        
-        {/* Titre Principal (h2) */}
-        <h2 className={styles.title}>Notre Approche de l'Inspection et du Contrôle Qualité</h2>
-        
-        {/* Point Clé 1: Inspection */}
-        <div className={styles.keyPoint}>
-           <ScrollAnimation animation="slideLeft" delay={0.5}>
-                  <div className={styles.icon}><BadgeCheck width={80} height={80} color="#f4ca54"/></div>
       </ScrollAnimation>
-          <ScrollAnimation animation="slideLeft" delay={0.5}>
-             <h4 className={styles.keyTitle}>Contrôle Qualité & Inspection :</h4>
+
+      {/* Image Secondaire */}
+      <ScrollAnimation animation="fade" delay={0.3} duration={1}>
+        <div className={styles.subImageWrapper}>
+          <Image
+            src={imageSecondaire}
+            alt="Vue aérienne d'un employé vérifiant un chargement de marchandise."
+            width={largeurSub}
+            height={hauteurSub}
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className={styles.subImage}
+          />
+        </div>
+      </ScrollAnimation>
+
+    </div>
+  </div>
+
+  {/* Colonne Droite : Texte */}
+  <div className={styles.contentCol}>
+
+    {/* Subtitle */}
+    <ScrollAnimation animation="slideUp" duration={0.8}>
+      <h6 className={styles.subtitle}>À PROPOS DE NOUS</h6>
+    </ScrollAnimation>
+
+    {/* Main Title */}
+    <ScrollAnimation animation="slideUp" delay={0.2} duration={0.9}>
+      <h2 className={styles.title}>Notre Approche de l'Inspection et du Contrôle Qualité</h2>
+    </ScrollAnimation>
+
+    {/* --- POINT CLÉ 1 --- */}
+    <div className={styles.keyPoint}>
+
+      {/* Icon Animation */}
+      <ScrollAnimation animation="fade-Right" duration={1}>
+        <div className={styles.icon}>
+          <BadgeCheck width={80} height={80} color="#f4ca54" />
+        </div>
+      </ScrollAnimation>
+
+      {/* Text Animation */}
+      <ScrollAnimation animation="fade-Left" delay={0.2} duration={1}>
+        <div>
+          <h4 className={styles.keyTitle}>Contrôle Qualité & Inspection :</h4>
           <p className={styles.keyDescription}>
-            Nos équipes sont vos yeux en Chine. Nous intervenons directement à la source 
-            pour garantir que vos marchandises répondent strictement à vos 
+            Nos équipes sont vos yeux en Chine. Nous intervenons directement à la
+            source pour garantir que vos marchandises répondent strictement à vos 
             spécifications avant l'envoi vers le Gabon et le Rwanda.
           </p>
-</ScrollAnimation>
-         
-        </div>
-
-        {/* Point Clé 2: Logistique */}
-          <ScrollAnimation animation="slideLeft" delay={0.5}>
-          <div className={styles.keyPoint}>
-          <div className={styles.icon}><Plane width={80} height={80} color="#f4ca54"/>
-        </div>
         </div>
       </ScrollAnimation>
-        
+
+    </div>
+
+    {/* --- POINT CLÉ 2 --- */}
+    <div className={styles.keyPoint}>
+
+      {/* Icon Animation */}
+      <ScrollAnimation animation="fade-Right" duration={1}>
+        <div className={styles.icon}>
+          <Plane width={80} height={80} color="#f4ca54" />
+        </div>
+      </ScrollAnimation>
+
+      {/* Text Animation */}
+      <ScrollAnimation animation="fade-Left" delay={0.2} duration={1}>
+        <div>
           <h4 className={styles.keyTitle}>Logistique Simplifiée & Envoi Sécurisé :</h4>
-          <ScrollAnimation animation="slideUp" duration={1}>
-            <p className={styles.keyDescription}>
+          <p className={styles.keyDescription}>
             Nous gérons l'ensemble du fret et des douanes. Nous sous-traitons avec 
-            des partenaires fiables comme JFI Cargo, Afrinna, et Yarnel Cargo pour un acheminement direct et sécurisé vers Libreville, Port-Gentil et Kigali.
+            des partenaires fiables comme JFI Cargo, Afrinna et Yarnel Cargo pour 
+            un acheminement direct et sécurisé vers Libreville, Port-Gentil et Kigali.
           </p>
+        </div>
       </ScrollAnimation>
-          
-        
-        
-        <Button href="/devis">
-        Demander un Devis
-        </Button>
 
-      </div>
-    </section>
+    </div>
+
+    {/* CTA Button */}
+    <ScrollAnimation animation="slideUp" delay={0.3} duration={1}>
+      <Button href="/devis">Demander un Devis</Button>
+    </ScrollAnimation>
+
+  </div>
+
+</section>
+
+       {/* --- SECTION ANIMATION FIABILITÉ --- */}
+<div className={styles.animations}>
+  
+  <div className={styles.animText}>
+        <ScrollAnimation animation="slideUp" delay={0.3} duration={1}>
+         <h1>Fiabilité</h1>
+        </ScrollAnimation>
+
+        <ScrollAnimation animation="slideDown" delay={0.2} duration={1}>
+           <p>
+      Banguissa Store fonde chacune de ses opérations sur la confiance, la transparence  
+      et l’engagement, en plaçant la satisfaction du client au centre de ses priorités.
+      Nous mettons un point d’honneur à offrir un service rapide et réactif, avec un support
+      client disponible pour répondre à chaque question ou besoin dans les plus brefs délais.
+      Chaque étape de notre processus — de l’achat à la livraison finale — est pensée pour
+      garantir efficacité, qualité et fluidité, afin que nos clients bénéficient d’une expérience
+      professionnelle, sécurisée et entièrement transparente.
+       </p>
+        </ScrollAnimation>
+   
+  </div>
+
+  <div className={styles.animVisual}>
+    <DotLottieReact
+      src="https://lottie.host/c0718123-d96d-4d5a-a696-e542d40ac7d4/vAR8ZIYvjq.lottie"
+      loop
+      autoplay
+      className={styles.myanimation}
+    />
+  </div>
+  <ScrollAnimation animation="slideUp" delay={0.3} duration={1}>
+      <Button href="/devis">Demander un Devis</Button>
+    </ScrollAnimation>
+
+</div>
+
+        </>
   );
 };
 
