@@ -21,6 +21,8 @@ export default function Gallery() {
     "/gallery/img-gallery-12.jpg",
     "/gallery/img-gallery-13.jpeg",
     "/gallery/img-gallery-14.jpeg",
+    "/gallery/img-gallery-15.jpeg",
+    "/gallery/img-gallery-16.jpeg",
   ];
 
   return (

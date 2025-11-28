@@ -103,4 +103,8 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .contactItem{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

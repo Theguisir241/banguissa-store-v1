@@ -1,7 +1,8 @@
 /* NAVBAR GLOBAL */
 .nav-container {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
   background: #f4ca54;
   height: 80px;
@@ -9,6 +10,20 @@
   align-items: center;
   justify-content: space-between; /* logo à gauche, menu à droite */
   padding: 0 20px;
+}
+.nav-container.scrolled {
+  background-color: rgba(244, 201, 84, 0.728);
+  backdrop-filter: blur(10px);
+}
+
+.closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* MENU DESKTOP */
@@ -19,12 +34,19 @@
   align-items: center;
 }
 
-.menu-items li a {
+.menu-items li {
   text-decoration: none;
   color: black;
   font-weight: 500;
 }
-
+.menu-items li:hover {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transform: translateX(-8px);
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+}
 /* HAMBURGER BUTTON (invisible desktop) */
 .hamburger {
   display: none;      /* invisible sur desktop */
@@ -49,7 +71,8 @@
   top: 0;
   right: 0;
   width: 70%;
-  height: 100vh;
+  height: 40vh;
+  border-bottom-left-radius: 50px;
   background: white;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
   padding-top: 100px;

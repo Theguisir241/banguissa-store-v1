@@ -24,8 +24,20 @@
 @media (max-width: 768px) {
   .aboutSection {
     flex-direction: column;
-    padding: 0px 3%;
+    padding: 0 3%;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .keyTitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contentCol {
+    align-items: center; /* centre tous les éléments de la colonne droite */
   }
 }
 

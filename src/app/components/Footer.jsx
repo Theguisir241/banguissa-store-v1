@@ -1,7 +1,7 @@
 "use client";
 import styles from "../styles/Footer.module.css";
 import { PhoneCall, MailPlus, MapPin } from "lucide-react";
-import { Instagram, Facebook } from "@deemlol/next-icons";
+import { Instagram, Facebook, MessageCircle  } from "@deemlol/next-icons";
 
 const Footer = () => {
   return (
@@ -31,7 +31,7 @@ const Footer = () => {
     </a>
   </div>
 
-  <div>
+  <div id="addressTitle" >
     <h2 style={{ marginBottom: "8px", fontSize: "16px", opacity: 0.9 }}>Guangzhou Address</h2>
     <a
       href="#"
@@ -83,6 +83,8 @@ const Footer = () => {
           <div className={styles.social}>
             <a href="https://www.facebook.com/profile.php?id=61576577405576" target="_blank"><Facebook size={24} /></a>
             <a href="https://www.instagram.com/banguissastore/" target="_blank"><Instagram size={24} /></a>
+            <a href="https://www.instagram.com/banguissastore/" target="_blank"><MessageCircle  size={24} /></a>
+
 
 
           </div>

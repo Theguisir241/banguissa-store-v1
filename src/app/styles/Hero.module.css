@@ -4,6 +4,7 @@
     background-size: cover;
     display: flex;
     align-items: center;
+    margin-top: 60px;
 
 }
 @media screen and (max-width: 600px) {
@@ -76,15 +77,12 @@
     padding: 10px;
     font-weight: 600;
     border-radius: 10px;
-    background-color: #f4c95488;
+    background-color: #f4ca54;
     color: black;
 
 
 }
-.hero-link-1 {
-  background-color: #f4ca54 !important;
-  
-}
+
 .illustrations-container{
   width: 100%;
   display: flex;
@@ -93,8 +91,11 @@
   text-align: center;
 
 }
-.icons-area-1,.icons-area-2,.icons-area-3{
-  margin: 0;
+.icon-item{
+  margin-top: 20;
+}
+.icon-item:hover {
+  color: #f4ca54; /* la nouvelle couleur au hover */
 }
 .text-area h2{
   color: #f4ca54;

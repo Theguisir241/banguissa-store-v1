@@ -21,7 +21,7 @@ export default function Services() {
     {
       title: "Livraison Sécurisée",
       description:
-        "Nous gérons l’acheminement vers Libreville, Port-Gentil et Kigali avec nos partenaires logistiques fiables.",
+        "Nous assurons l’acheminement vers Libreville, Port-Gentil et Kigali grâce à nos partenaires logistiques fiables.",
       icon: <PackageCheck size={40} className={styles.icon} />,
     },
   ];
