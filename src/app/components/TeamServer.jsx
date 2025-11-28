@@ -4,8 +4,8 @@ import styles from "../styles/Team.module.css";
 
 const teamMembers = [
   { name: "Stéphane Mbongou", role: "CEO & Founder", img: "/team/stephane.png" },
-  { name: "Penny Chen", role: "Logistic & Quality Manager", img: "/team/penny.png" },
-  { name: "Issambo Princesse ", role: "Co-Founder & Advisor", img: "/team/sephora.png" },
+  { name: "Penny Chen", role: "Logistic & Quality Manager", img: "/team/penny.jpg" },
+  { name: "Issambo Princesse ", role: "Co-Founder & Advisor", img: "/team/sephora.jpg" },
   { name: "Lucy Li", role: "Accountant", img: "/team/lucy.png" },
 ];
 
