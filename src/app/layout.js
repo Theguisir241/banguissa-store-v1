@@ -4,40 +4,55 @@ import "./globals.css";
 import Footer from "./components/Footer";
 
 const lato = Lato({
-  subsets: ["latin"],
-  weight: ["400", "700"], // normal et bold
-  variable: "--font-lato",
+    subsets: ["latin"],
+    weight: ["400", "700"], // normal et bold
+    variable: "--font-lato",
 });
 
-// --- CORRECTION ET OPTIMISATION DES METADONNÉES ---
+// --- CONFIGURATION DU VIEWPORT (Pour themeColor) ---
+export const viewport = {
+    themeColor: "#f4ca54", 
+};
 
 export const metadata = {
     
-    // 1. CORRECTION DE L'URL DE BASE (metadataBase)
-    // Cela permet à Next.js de construire des chemins absolus corrects pour les images sociales.
+    // 1. URL DE BASE et SEO
     metadataBase: new URL("https://Banguissa-store.online"),
-    
-    // Titre de la page (apparaît dans l'onglet du navigateur et les résultats de recherche)
     title: "Banguissa Store | Sourcing, Contrôle Qualité et Logistique en Chine",
-    
-    // Description de la page (apparaît sous le titre dans les résultats de recherche)
     description: "Votre partenaire d’achat fiable en Chine. Nous assurons le sourcing, le contrôle qualité et la logistique complète pour la livraison en Afrique (Libreville, Port-Gentil, Kigali). Obtenez un devis rapide !",
-    
-    // Mots-clés pertinents (Aide Google à comprendre le contexte, bien que moins important qu'avant)
     keywords: ["Banguissa Store", "achat Chine", "sourcing Chine", "contrôle qualité", "logistique Afrique", "importation Chine"],
     
-    // NOTE: themeColor a été retiré d'ici et déplacé dans "viewport" (voir ci-dessous)
+    // 2. ICÔNES (FAVICON, Apple Touch, Android)
+    icons: {
+        // Icône principale: On privilégie le format SVG pour la mise à l'échelle
+        icon: [
+            { url: '/favicon.svg', type: 'image/svg+xml' },
+            // Fallback PNG et ICO
+            { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+            { url: '/favicon.ico', sizes: 'any' }, 
+        ],
+        // Icône pour les appareils Apple (iOS)
+        apple: [
+            { url: '/apple-touch-icon.png', sizes: '180x180' },
+        ],
+        // Icônes spécifiques pour Android / PWA
+        other: [
+            { rel: 'icon', url: '/android-chrome-192x192.png', sizes: '192x192' },
+            { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512' },
+        ]
+    },
     
-    // --- 2. OPEN GRAPH (Partage Facebook, LinkedIn, etc.) ---
+    // 3. MANIFESTE WEB (Android, PWA)
+    manifest: '/site.webmanifest',
     
+    // 4. OPEN GRAPH (Facebook, LinkedIn)
     openGraph: {
         title: "Banguissa Store : L'Import-Export Simplifié depuis la Chine",
         description: "Sourcing, inspection, négociation et livraison sécurisée de vos produits depuis la Chine vers l'Afrique.",
-        url: "https://Banguissa-store.online", // Bien de le répéter
+        url: "https://Banguissa-store.online", 
         siteName: 'Banguissa Store',
         images: [
             {
-                // Next.js utilisera metadataBase + ce chemin relatif
                 url: '/images/open-graph-image.jpg', 
                 width: 1200,
                 height: 630,
@@ -48,42 +63,25 @@ export const metadata = {
         type: 'website',
     },
     
-    // --- 3. TWITTER (Partage sur X/Twitter) ---
-    
+    // 5. TWITTER (X)
     twitter: {
-        card: '/black-female-courier-working-checking-packages-delivery-van.jpg', 
+        // CORRECTION: 'summary_large_image' est le type de carte, pas un chemin d'image.
+        card: 'summary_large_image', 
         title: 'Banguissa Store | Achat et Livraison depuis la Chine',
         description: 'Le partenaire de confiance pour sécuriser vos importations en Afrique.',
         creator: '@Banguissastore',
-        // Next.js utilisera metadataBase + ce chemin relatif
         images: ['/diverse-employees-analyzing-inventory-list-laptop-counting-products-boxes-storage-room-shelves-young-people-using-device-work-stock-logistics-delivery-service.jpg'], 
     },
 };
 
-// --- CORRECTION DU THEMECOLOR (viewport) ---
-
-// Ceci est la nouvelle fonction exportée pour les propriétés liées au Viewport.
-export const viewport = {
-    // Note : Correction du double dièse dans votre code original
-    themeColor: "#f4ca54", 
-    // Autres propriétés comme 'width' ou 'initial-scale' peuvent être ajoutées ici si besoin.
-};
-<link 
-  rel="preload" 
-  href="/black-female-courier-working-checking-packages-delivery-van.jpg" 
-  as="image"
-/>
-
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={lato.variable}>
-         <Navbar/>
-           {children}
-         <Footer/>
-           
-        
-      </body>
-    </html>
-  );
+    return (
+        <html lang="fr"> 
+            <body className={lato.variable}>
+                <Navbar/>
+                {children}
+                <Footer/>
+            </body>
+        </html>
+    );
 }

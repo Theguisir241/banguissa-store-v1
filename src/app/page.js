@@ -4,7 +4,6 @@ import Services from "./components/Services";
 import Gallery from "./components/Galerry";
 import GetAQuote from "./components/GetAQuote";
 import TeamServer from "./components/TeamServer";
-import { Import } from "lucide-react";
 
 export default function Home() {
   return (
