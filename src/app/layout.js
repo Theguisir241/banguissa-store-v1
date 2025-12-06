@@ -1,3 +1,14 @@
+import { Lato } from "next/font/google";
+import Navbar from "./components/navbar";
+import "./globals.css";
+import Footer from "./components/Footer";
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"], // normal et bold
+  variable: "--font-lato",
+});
+
 // --- CORRECTION ET OPTIMISATION DES METADONNÉES ---
 
 export const metadata = {
@@ -57,3 +68,22 @@ export const viewport = {
     themeColor: "#f4ca54", 
     // Autres propriétés comme 'width' ou 'initial-scale' peuvent être ajoutées ici si besoin.
 };
+<link 
+  rel="preload" 
+  href="/black-female-courier-working-checking-packages-delivery-van.jpg" 
+  as="image"
+/>
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={lato.variable}>
+         <Navbar/>
+           {children}
+         <Footer/>
+           
+        
+      </body>
+    </html>
+  );
+}
