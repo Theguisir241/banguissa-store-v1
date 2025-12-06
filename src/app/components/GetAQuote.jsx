@@ -107,7 +107,7 @@ export default function GetAQuote() {
 
           <div className={styles.row}>
             <select
-              name="type"
+              name="text"
               value={formData.type}
               onChange={handleChange}
               required

@@ -1,0 +1,32 @@
+/* Conteneur principal pour le titre et le séparateur */
+.container {
+  display: flex;
+  align-items: center; 
+  margin: 20px 0;
+}
+
+/* Style de base du titre */
+.title {
+  font-weight: 600; 
+  margin: 0; 
+  padding-right: 15px; 
+}
+
+/* Conteneur pour les deux segments de la ligne */
+.separator {
+  display: flex;
+  height: 5px; 
+  min-width: 50px; 
+}
+
+/* Style de base des segments de la ligne */
+.segment1 {
+  width: 40px; 
+  height: 100%; 
+  margin-right: 5px; 
+}
+
+.segment2 {
+  width: 15px; 
+  height: 100%;
+}

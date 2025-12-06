@@ -2,7 +2,7 @@
 
 import styles from "../styles/Services.module.css";
 import ScrollAnimation from "./ScrollAnimation";
-import { Plane, PackageCheck, ClipboardCheck } from "lucide-react";
+import { Plane, PackageCheck, ClipboardCheck, Import } from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -30,10 +30,10 @@ export default function Services() {
     <>
     <section className={styles.section} id="services">
       <ScrollAnimation animation="fade" duration={1}>
-  <h2 className={styles.title}>
-    <span>Nos </span>
-    <span className={styles.highlight}>Services</span>
-  </h2>
+        <h2 className={styles.title}>
+          <span>Nos </span>
+          <span className={styles.highlight}>Services</span>
+        </h2>
   <p className={styles.subtitle}>
     Banguissa Store vous accompagne de l’achat à la livraison sécurisée de vos produits depuis la Chine.
   </p>

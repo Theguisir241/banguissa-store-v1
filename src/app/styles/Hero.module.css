@@ -1,5 +1,5 @@
 .hero-container{
-   background:linear-gradient(rgba(0, 0, 0, 0.612), rgb(0, 0, 0)),
+   background:linear-gradient(rgba(0, 0, 0, 0.242), rgb(0, 0, 0)),
    url("/black-female-courier-working-checking-packages-delivery-van.jpg");
     background-size: cover;
     display: flex;
@@ -54,12 +54,13 @@
     margin: 50px;  
 }
 .hero-content h1{
-  color: #f4ca54;
+  color: #ffffff;
   margin-top: 2rem;
    
 }
 .hero-content h2 {
   margin-top: 15px;
+  color: #f4ca54;
 }
 .hero-links{
     display: flex;
@@ -92,7 +93,7 @@
 
 }
 .icon-item{
-  margin-top: 20;
+  margin-top: 50;
 }
 .icon-item:hover {
   color: #f4ca54; /* la nouvelle couleur au hover */
